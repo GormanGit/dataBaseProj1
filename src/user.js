@@ -7,6 +7,6 @@ const UserSchema = new Schema({
 });
 
 //'user' is what the collection is named. User means the entire collection and not a single user.
-const User = mongoose.model('user', UserSChema);
+const User = mongoose.model('user', UserSchema);
 
 module.exports = User;
