@@ -7,11 +7,16 @@ const User= require('../src/user');
 
 
 describe('Create records', () =>{
-  it('saves a user', ()=> {
+  it('saves a user', (done)=> {
     //assertion something to compare one value to another and have mocha tell us pass or fail.
   const joe = new User({name: 'Joe'});
 
-  joe.save();
+  joe.save()
+    .then(() => {
+      //Has Joe been saved successfully?
+      assert(!joe.isNew);
+      done();
+    })
   })
 
 })
